@@ -23,51 +23,42 @@ int main() {
 }
 
 int sumN(int n) {
-    if(n > 0) {
-     return n + sumN(n - 1);
+    if(n == 0) {
+     return 0;
     }
-    else {
-        return 0;
-    }
+    return n + sumN(n - 1);    
 }
 
 int fibonacci(int n){
-    if (n <= 0) {
+    if(n <= 0) {
         return 0;
     }
     else if (n==1){
         return 1;
-    }
-    else{
+    }    
     return fibonacci(n - 1) + fibonacci(n - 2);
-    }
 }
 
 void printBinary(int n){
-    if (n == 0) {
+    if(n == 0) {
       return;
-    }
-    else {    
+    }  
     printBinary(n / 2); 
-        cout << n % 2;   
-      } 
-    }
+    cout << n % 2;   
+}
 
 int sumDigits(int n){
-    if (n > 0) {
-    return (n % 10) + sumDigits(n / 10);
-    }
-    else {
+    if(n == 0) {
         return 0;
     }
+    return (n % 10) + sumDigits(n / 10);
 }
 
 void printReverse(int arr[], int size){
     if (size <= 0) {
         return;
       } 
-      else {
-        cout << arr[size - 1] << " "; 
-        printReverse(arr, size - 1);  
-      }
-    }
+    cout << arr[size - 1] << " "; 
+    printReverse(arr, size - 1);  
+}
+
